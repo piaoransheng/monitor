@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Video 7.X</title>
+    <link href="/static/lib/video7.3.0/video-js.min.css" rel="stylesheet">
+    <script src="/static/lib/video7.3.0/video.min.js"></script>
+    <script src="/static/lib/flash/videojs-flash.min.js"></script>
+</head>
+
+<body>
+    <video id="liveVideo" class="video-js" controls autoplay preload="auto" width="1280" height="720" data-setup="{}">
+        <source src="rtmp://192.168.1.72:1935/live/" type="rtmp/flv">
+    </video>
+</body>
+</html>

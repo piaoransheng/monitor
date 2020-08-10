@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/lib/flv/flv.min.js"></script>
+    <script src="/lib/flv/flv.js"></script>
+    <title>监控视频播放</title>
+</head>
+<body>
+<video id="videoElement1" controls style="outline: none;" width="30%" height="30%" ></video>
+<video id="videoElement2" controls style="outline: none;" width="30%" height="30%" ></video>
+<video id="videoElement3" controls style="outline: none;" width="30%" height="30%"></video>
+<script>
+    if (flvjs.isSupported()) {
+        var videoElement1 = document.getElementById('videoElement1');
+        var videoElement2 = document.getElementById('videoElement2');
+        var videoElement3 = document.getElementById('videoElement3');
+        var url1 = 'http://192.168.1.76:8080/live/monitor1.flv?vhost=monitor1';
+        var url2 = 'http://192.168.1.76:8080/live/monitor2.flv?vhost=monitor2';
+        var url3 = 'http://192.168.1.76:8080/live/monitor3.flv?vhost=monitor3';
+
+        var flvPlayer1 = flvjs.createPlayer({
+            type: 'flv',
+            isLive: true,
+            url: url1,
+            hasAudio:true,
+            hasVideo:true,
+            enableStashBuffer: true
+        });
+        flvPlayer1.attachMediaElement(videoElement1);
+        flvPlayer1.load();
+        flvPlayer1.play();
+
+        var flvPlayer2 = flvjs.createPlayer({
+            type: 'flv',
+            isLive: true,
+            url: url2,
+            hasAudio:true,
+            hasVideo:true,
+            enableStashBuffer: true
+        });
+        flvPlayer2.attachMediaElement(videoElement2);
+        flvPlayer2.load();
+        flvPlayer2.play();
+
+        var flvPlayer3 = flvjs.createPlayer({
+            type: 'flv',
+            isLive: true,
+            url: url3,
+            hasAudio:true,
+            hasVideo:true,
+            enableStashBuffer: true
+        });
+        flvPlayer3.attachMediaElement(videoElement3);
+        flvPlayer3.load();
+        flvPlayer3.play();
+    }
+</script>
+</body>
+</html>
