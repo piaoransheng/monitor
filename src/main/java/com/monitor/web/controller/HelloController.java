@@ -23,7 +23,7 @@ public class HelloController {
         return new ModelAndView("/pages/video.html");
     }
 
-    @RequestMapping("/toFlv")
+    @RequestMapping("/flv")
     public ModelAndView toFlv(){
         return new ModelAndView("/pages/flv.html");
     }
