@@ -28,6 +28,11 @@ public class HelloController {
         return new ModelAndView("/pages/flv.html");
     }
 
+    @RequestMapping("/flv2")
+    public ModelAndView toFlv2(){
+        return new ModelAndView("/pages/flv2.html");
+    }
+
     //java操作CMD
     @ResponseBody
     @RequestMapping("/javaOprateCMD")
